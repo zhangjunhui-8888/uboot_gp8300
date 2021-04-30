@@ -1,0 +1,8 @@
+menu "DMA drivers"
+
+config GPT_CPU_DMA
+	bool "cpu dma test"
+	help
+	 CPU DMA test
+
+endmenu

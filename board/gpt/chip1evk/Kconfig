@@ -1,0 +1,11 @@
+if TARGET_CHIP1_EVK
+
+config SYS_BOARD
+	default "chip1evk"
+
+config SYS_VENDOR
+        default "gpt"
+
+config SYS_CONFIG_NAME
+	default "chip1evk"
+endif

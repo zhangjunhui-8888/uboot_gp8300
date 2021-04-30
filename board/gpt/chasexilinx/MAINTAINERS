@@ -1,0 +1,6 @@
+FPGA BOARD
+M:	scxie <scxie@hxgpt.com>
+S:	Maintained
+F:	board/gpt/chasexilinx/
+F:	include/configs/chasexilinx.h
+F:	configs/gpt_chasexilinx_defconfig

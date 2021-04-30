@@ -1,0 +1,54 @@
+if GPT_CHIP2
+
+config GPT_CLOCK_SETTINGS
+	bool "GPT CLOCK SETTINGS"
+	default y
+
+menu "GPT OSC FREQ"
+
+config OSC_12MHZ
+     	depends on GPT_CLOCK_SETTINGS
+       	bool "OSC 12MHz"
+       	default y
+
+endmenu
+
+choice
+	prompt "GPT CPLL FREQ"
+	default CPLL_1800MHZ
+
+config CPLL_2000MHZ
+     	depends on GPT_CLOCK_SETTINGS
+       	bool "CPLL 2000MHz"
+        help
+	  Can not support GSNN
+
+config CPLL_1900MHZ
+     	depends on GPT_CLOCK_SETTINGS
+       	bool "CPLL 1900MHz"
+
+config CPLL_1800MHZ
+     	depends on GPT_CLOCK_SETTINGS
+       	bool "CPLL 1800MHz"
+
+config CPLL_1600MHZ
+     	depends on GPT_CLOCK_SETTINGS
+       	bool "CPLL 1600MHz"
+
+endchoice
+
+choice
+	prompt "GPT DDR3 DATA RATE"
+	default DDR3_2133MBPS
+
+config DDR3_2133MBPS
+     	depends on GPT_CLOCK_SETTINGS
+       	bool "DDR3 2133MBPS"
+
+config DDR3_1600MBPS
+     	depends on GPT_CLOCK_SETTINGS
+       	bool "DDR3 1600MBPS"
+
+endchoice
+
+endif

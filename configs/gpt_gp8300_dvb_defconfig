@@ -1,0 +1,480 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# U-Boot 2016.01 Configuration
+#
+CONFIG_HAVE_GENERIC_BOARD=y
+CONFIG_SYS_GENERIC_BOARD=y
+# CONFIG_ARC is not set
+# CONFIG_ARM is not set
+# CONFIG_AVR32 is not set
+# CONFIG_BLACKFIN is not set
+# CONFIG_M68K is not set
+# CONFIG_MICROBLAZE is not set
+# CONFIG_MIPS is not set
+# CONFIG_NDS32 is not set
+# CONFIG_NIOS2 is not set
+# CONFIG_OPENRISC is not set
+# CONFIG_PPC is not set
+# CONFIG_SANDBOX is not set
+# CONFIG_SH is not set
+# CONFIG_SPARC is not set
+# CONFIG_X86 is not set
+CONFIG_GPT=y
+CONFIG_SYS_ARCH="gpt"
+CONFIG_SYS_CPU="chip2"
+CONFIG_SYS_SOC="GP8300"
+CONFIG_SYS_VENDOR="gpt"
+CONFIG_SYS_BOARD="gp8300_dvb"
+CONFIG_SYS_CONFIG_NAME="gp8300_dvb"
+# CONFIG_SYS_ICACHE_OFF is not set
+CONFIG_SYS_DCACHE_OFF=y
+CONFIG_SYS_L2CACHE_OFF=y
+# CONFIG_SYS_MALLOC_F is not set
+# CONFIG_SPL_SYS_MALLOC_SIMPLE is not set
+# CONFIG_SPL_DM is not set
+# CONFIG_DM_SERIAL is not set
+# CONFIG_DM_SPI is not set
+# CONFIG_DM_I2C is not set
+# CONFIG_DM_GPIO is not set
+CONFIG_MMC=y
+CONFIG_64BIT=y
+# CONFIG_DM_KEYBOARD is not set
+
+#
+# GPT architecture
+#
+CONFIG_GPT_CHIP2=y
+
+#
+# GPT clock settings
+#
+CONFIG_GPT_CLOCK_SETTINGS=y
+
+#
+# GPT OSC FREQ
+#
+CONFIG_OSC_12MHZ=y
+# CONFIG_CPLL_2000MHZ is not set
+# CONFIG_CPLL_1900MHZ is not set
+CONFIG_CPLL_1800MHZ=y
+# CONFIG_CPLL_1600MHZ is not set
+# CONFIG_DDR3_2133MBPS is not set
+CONFIG_DDR3_1600MBPS=y
+# CONFIG_SYS_OUT_OF_ORDER_OFF is not set
+CONFIG_GPT_CACHE_LINE_SHIFT=5
+CONFIG_GPT_SMP_SUPPORT=y
+# CONFIG_TARGET_CHIP1_FPGA is not set
+# CONFIG_TARGET_CHIP1_EVK is not set
+# CONFIG_TARGET_CHIP2_FPGA is not set
+# CONFIG_TARGET_CHIP2_EVK is not set
+# CONFIG_TARGET_CHIP2_SIM is not set
+# CONFIG_TARGET_CHASE_XILINX is not set
+# CONFIG_TARGET_GP8300_FPGA is not set
+# CONFIG_TARGET_GP8300_EVK is not set
+CONFIG_TARGET_GP8300_DVB=y
+# CONFIG_TARGET_GP8300_CHAOKONG is not set
+# CONFIG_TARGET_GP8300_TCX is not set
+CONFIG_APIU=y
+
+#
+# GPT NORFLASH SUPPORT
+#
+CONFIG_GPT_NORFLASH_SUPPORT=y
+CONFIG_GPT_NORFLASH_4BYTE_ADDR_MODE=y
+# CONFIG_GPT_NORFLASH_EXTEND_ADDR_MODE is not set
+
+#
+# OS boot interface
+#
+CONFIG_GPT_BOOT_CMDLINE_LEGACY=y
+CONFIG_GPT_BOOT_ENV_LEGACY=y
+CONFIG_GPT_BOOT_FDT=y
+CONFIG_GPT_TCMBOOT=y
+# CONFIG_USE_ARCH_STRCPY is not set
+# CONFIG_USE_ARCH_STRLEN is not set
+# CONFIG_USE_ARCH_STRCMP is not set
+# CONFIG_USE_ARCH_MEMSET is not set
+# CONFIG_USE_ARCH_MEMCPY is not set
+# CONFIG_USE_ARCH_MEMCMP is not set
+
+#
+# General setup
+#
+CONFIG_LOCALVERSION=""
+CONFIG_LOCALVERSION_AUTO=y
+CONFIG_CC_OPTIMIZE_FOR_SIZE=y
+CONFIG_EXPERT=y
+CONFIG_SYS_MALLOC_CLEAR_ON_INIT=y
+
+#
+# Boot images
+#
+CONFIG_SUPPORT_SPL=y
+CONFIG_SPL=y
+# CONFIG_SPL_STACK_R is not set
+# CONFIG_SPL_SEPARATE_BSS is not set
+CONFIG_FIT=y
+# CONFIG_FIT_VERBOSE is not set
+# CONFIG_FIT_SIGNATURE is not set
+CONFIG_SYS_EXTRA_OPTIONS=""
+
+#
+# Command line interface
+#
+CONFIG_HUSH_PARSER=y
+CONFIG_SYS_HUSH_PARSER=y
+CONFIG_SYS_PROMPT="=> "
+
+#
+# Autoboot options
+#
+# CONFIG_AUTOBOOT_KEYED is not set
+
+#
+# Commands
+#
+
+#
+# Info commands
+#
+CONFIG_CMD_BDI=y
+# CONFIG_CMD_CONSOLE is not set
+# CONFIG_CMD_CPU is not set
+# CONFIG_CMD_LICENSE is not set
+
+#
+# Boot commands
+#
+CONFIG_CMD_BOOTD=y
+CONFIG_CMD_BOOTM=y
+# CONFIG_CMD_ELF is not set
+CONFIG_CMD_GO=y
+CONFIG_CMD_RUN=y
+CONFIG_CMD_IMI=y
+# CONFIG_CMD_IMLS is not set
+# CONFIG_CMD_XIMG is not set
+
+#
+# Environment commands
+#
+# CONFIG_CMD_EXPORTENV is not set
+# CONFIG_CMD_IMPORTENV is not set
+CONFIG_CMD_EDITENV=y
+CONFIG_CMD_SAVEENV=y
+# CONFIG_CMD_ENV_EXISTS is not set
+
+#
+# Memory commands
+#
+CONFIG_CMD_MEMORY=y
+# CONFIG_CMD_CRC32 is not set
+# CONFIG_LOOPW is not set
+# CONFIG_CMD_MEMTEST is not set
+# CONFIG_CMD_MX_CYCLIC is not set
+CONFIG_CMD_MEMINFO=y
+
+#
+# Device access commands
+#
+CONFIG_CMD_DM=y
+# CONFIG_CMD_DEMO is not set
+CONFIG_CMD_LOADB=y
+# CONFIG_CMD_LOADS is not set
+CONFIG_CMD_FLASH=y
+CONFIG_CMD_NOR=y
+# CONFIG_CMD_NAND is not set
+# CONFIG_CMD_SF is not set
+# CONFIG_CMD_SPI is not set
+CONFIG_CMD_I2C=y
+CONFIG_CMD_VIDEO_OUT_TEST=y
+# CONFIG_CMD_USB is not set
+CONFIG_CMD_FPGA=y
+# CONFIG_CMD_GPIO is not set
+CONFIG_CMD_MMC=y
+
+#
+# Shell scripting commands
+#
+CONFIG_CMD_ECHO=y
+# CONFIG_CMD_ITEST is not set
+# CONFIG_CMD_SOURCE is not set
+# CONFIG_CMD_SETEXPR is not set
+
+#
+# Network commands
+#
+CONFIG_CMD_NET=y
+# CONFIG_CMD_TFTPPUT is not set
+# CONFIG_CMD_TFTPSRV is not set
+# CONFIG_CMD_RARP is not set
+CONFIG_CMD_DHCP=y
+CONFIG_CMD_NFS=y
+CONFIG_CMD_PING=y
+# CONFIG_CMD_CDP is not set
+# CONFIG_CMD_SNTP is not set
+# CONFIG_CMD_DNS is not set
+# CONFIG_CMD_LINK_LOCAL is not set
+
+#
+# Misc commands
+#
+# CONFIG_CMD_TIME is not set
+# CONFIG_CMD_MISC is not set
+# CONFIG_CMD_TIMER is not set
+
+#
+# Boot timing
+#
+# CONFIG_BOOTSTAGE is not set
+CONFIG_BOOTSTAGE_USER_COUNT=20
+CONFIG_BOOTSTAGE_STASH_ADDR=0
+CONFIG_BOOTSTAGE_STASH_SIZE=4096
+
+#
+# Power commands
+#
+
+#
+# Security commands
+#
+# CONFIG_CONSOLE_RECORD is not set
+CONFIG_NET=y
+CONFIG_NET_RANDOM_ETHADDR=y
+# CONFIG_NETCONSOLE is not set
+CONFIG_NET_TFTP_VARS=y
+
+#
+# Device Drivers
+#
+
+#
+# Generic Driver Options
+#
+CONFIG_DM=y
+CONFIG_DM_WARN=y
+CONFIG_DM_DEVICE_REMOVE=y
+CONFIG_DM_STDIO=y
+CONFIG_DM_SEQ_ALIAS=y
+# CONFIG_REGMAP is not set
+# CONFIG_SPL_REGMAP is not set
+# CONFIG_DEVRES is not set
+# CONFIG_ADC is not set
+# CONFIG_ADC_EXYNOS is not set
+# CONFIG_ADC_SANDBOX is not set
+# CONFIG_CLK is not set
+# CONFIG_CPU is not set
+
+#
+# Hardware crypto devices
+#
+# CONFIG_FSL_CAAM is not set
+
+#
+# Demo for driver model
+#
+# CONFIG_DM_DEMO is not set
+
+#
+# DFU support
+#
+# CONFIG_DFU_TFTP is not set
+
+#
+# DMA drivers
+#
+CONFIG_GPT_CPU_DMA=y
+
+#
+# GPIO Support
+#
+# CONFIG_ATMEL_PIO4 is not set
+# CONFIG_LPC32XX_GPIO is not set
+# CONFIG_VYBRID_GPIO is not set
+
+#
+# I2C support
+#
+# CONFIG_DM_I2C_COMPAT is not set
+# CONFIG_CROS_EC_KEYB is not set
+
+#
+# LED Support
+#
+# CONFIG_LED is not set
+
+#
+# Multifunction device drivers
+#
+# CONFIG_MISC is not set
+# CONFIG_CROS_EC is not set
+# CONFIG_FSL_SEC_MON is not set
+# CONFIG_MXC_OCOTP is not set
+# CONFIG_PCA9551_LED is not set
+# CONFIG_RESET is not set
+
+#
+# MMC Host controller Support
+#
+# CONFIG_DM_MMC is not set
+CONFIG_SDHCI=y
+CONFIG_GENERIC_MMC=y
+CONFIG_MMC_SDMA=y
+CONFIG_GPT_SDHCI=y
+
+#
+# MTD Support
+#
+# CONFIG_MTD is not set
+CONFIG_GPT_SPI_NORFLASH=y
+
+#
+# NAND Device Support
+#
+# CONFIG_NAND_DENALI is not set
+# CONFIG_NAND_VF610_NFC is not set
+# CONFIG_NAND_PXA3XX is not set
+
+#
+# Generic NAND options
+#
+# CONFIG_SPL_NAND_DENALI is not set
+
+#
+# SPI Flash Support
+#
+# CONFIG_SPI_FLASH is not set
+# CONFIG_DM_ETH is not set
+# CONFIG_PHYLIB is not set
+# CONFIG_NETDEVICES is not set
+# CONFIG_E1000 is not set
+# CONFIG_ETH_DESIGNWARE is not set
+
+#
+# PCI
+#
+# CONFIG_DM_PCI is not set
+CONFIG_PCIE_GPT=y
+# CONFIG_GPT_PCIE_EP is not set
+CONFIG_GPT_PCIE_RC=y
+
+#
+# Pin controllers
+#
+# CONFIG_PINCTRL is not set
+
+#
+# Power
+#
+# CONFIG_DM_PMIC is not set
+# CONFIG_DM_REGULATOR is not set
+# CONFIG_RAM is not set
+
+#
+# Remote Processor drivers
+#
+
+#
+# Real Time Clock
+#
+# CONFIG_DM_RTC is not set
+
+#
+# Serial drivers
+#
+CONFIG_GPT_APIU_UART0=y
+# CONFIG_GPT_APIU_UART1 is not set
+# CONFIG_GPT_APIU_UART2 is not set
+# CONFIG_GPT_APIU_UART3 is not set
+# CONFIG_DEBUG_UART is not set
+# CONFIG_SYS_NS16550 is not set
+
+#
+# Sound support
+#
+# CONFIG_SOUND is not set
+
+#
+# SPI Support
+#
+# CONFIG_FSL_ESPI is not set
+# CONFIG_TI_QSPI is not set
+# CONFIG_DM_THERMAL is not set
+
+#
+# Timer Support
+#
+# CONFIG_TIMER is not set
+
+#
+# TPM support
+#
+# CONFIG_USB is not set
+
+#
+# Graphics support
+#
+CONFIG_SHOW_LOGO_GPT=y
+CONFIG_VIDEO_GPT=y
+# CONFIG_GPT_VDO_VDMEM is not set
+# CONFIG_VIDEO_VESA is not set
+# CONFIG_VIDEO_LCD_ANX9804 is not set
+# CONFIG_VIDEO_LCD_SSD2828 is not set
+# CONFIG_DISPLAY_PORT is not set
+# CONFIG_VIDEO_TEGRA124 is not set
+CONFIG_VIDEO_ADV7511=y
+# CONFIG_VIDEO_BRIDGE is not set
+
+#
+# hdmi support
+#
+# CONFIG_HDMI_ADV is not set
+# CONFIG_PHYS_TO_BUS is not set
+
+#
+# File systems
+#
+
+#
+# ext4 file systems
+#
+CONFIG_FS_EXT4=y
+CONFIG_CMD_EXT4=y
+CONFIG_EXT4_WRITE=y
+CONFIG_CMD_EXT4_WRITE=y
+
+#
+# fat file systems
+#
+CONFIG_FS_FAT=y
+CONFIG_CMD_FAT=y
+CONFIG_FAT_WRITE=y
+CONFIG_CMD_FAT_WRITE=y
+
+#
+# Library routines
+#
+CONFIG_CC_OPTIMIZE_LIBS_FOR_SPEED=y
+CONFIG_HAVE_PRIVATE_LIBGCC=y
+# CONFIG_USE_PRIVATE_LIBGCC is not set
+CONFIG_SYS_HZ=1000
+# CONFIG_SYS_VSNPRINTF is not set
+# CONFIG_USE_TINY_PRINTF is not set
+CONFIG_REGEX=y
+CONFIG_LIB_RAND=y
+# CONFIG_CMD_DHRYSTONE is not set
+# CONFIG_RSA is not set
+# CONFIG_TPM is not set
+
+#
+# Hashing Support
+#
+# CONFIG_SHA1 is not set
+# CONFIG_SHA256 is not set
+# CONFIG_SHA_HW_ACCEL is not set
+
+#
+# Compression Support
+#
+# CONFIG_LZ4 is not set
+# CONFIG_ERRNO_STR is not set
+# CONFIG_UNIT_TEST is not set

@@ -1,0 +1,6 @@
+FPGA BOARD
+M:	scxie <scxie@hxgpt.com>
+S:	Maintained
+F:	board/gpt/chip2fpga/
+F:	include/configs/chip2fpga.h
+F:	configs/gpt_chip2fpga_defconfig

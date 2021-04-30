@@ -1,0 +1,6 @@
+SOC BOARD
+M:	gke <gke@hxgpt.com>
+S:	Maintained
+F:	board/gpt/gp8300_evk/
+F:	include/configs/gp8300_evk.h
+F:	configs/gpt_gp8300_evk_defconfig

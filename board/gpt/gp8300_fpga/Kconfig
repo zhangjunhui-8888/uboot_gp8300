@@ -1,0 +1,17 @@
+if TARGET_GP8300_FPGA
+
+config SYS_BOARD
+	default "gp8300_fpga"
+
+config SYS_VENDOR
+        default "gpt"
+
+config SYS_CONFIG_NAME
+	default "gp8300_fpga"
+
+config GPT_NORFLASH_SUPPORT
+	bool "Enable norflash operation"
+	depends on GPT_SPI_NORFLASH
+	help
+	    support norfalsh operation API
+endif

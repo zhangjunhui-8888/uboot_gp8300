@@ -1,0 +1,12 @@
+if TARGET_CHIP2_SIM
+
+config SYS_BOARD
+	default "chip2sim"
+
+config SYS_VENDOR
+        default "gpt"
+
+config SYS_CONFIG_NAME
+	default "chip2sim"
+
+endif

@@ -1,0 +1,12 @@
+if TARGET_GP8300_HERA
+
+config SYS_BOARD
+	default "gp8300_hera"
+
+config SYS_VENDOR
+        default "gpt"
+
+config SYS_CONFIG_NAME
+	default "gp8300_hera"
+
+endif

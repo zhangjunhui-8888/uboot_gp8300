@@ -1,0 +1,6 @@
+FPGA BOARD
+M:	gke <gke@hxgpt.com>
+S:	Maintained
+F:	board/gpt/gp8300_hera/
+F:	include/configs/gp8300_hera.h
+F:	configs/gpt_gp8300_hera_defconfig

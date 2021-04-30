@@ -1,0 +1,10 @@
+if GPT_CHIP1
+
+config APIU
+	bool "Enable apiu support"
+	default y
+	---help---
+	Say Y here to enable APIU support
+
+	
+endif

@@ -1,0 +1,27 @@
+menu "ext4 file systems"
+
+config	FS_EXT4 
+	bool "Enable ext4 file systems support"
+	default y
+	help
+	  Support ext4 file systems
+
+config	CMD_EXT4 
+	bool "ext4 command support"
+	default y
+	help
+	  Support ext4 command 
+
+config	EXT4_WRITE 
+	bool "ext4 write support"
+	default y
+	help
+	  Support ext4 write 
+
+config	CMD_EXT4_WRITE 
+	bool "ext4 write command support"
+	default y
+	help
+	  Support ext4 write command 
+
+endmenu

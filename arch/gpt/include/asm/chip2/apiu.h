@@ -1,0 +1,154 @@
+#ifndef __GPT_APIU_H__
+#define __GPT_APIU_H__
+
+#include <asm/io.h>
+
+/*operations for peripherals
+*/
+#define APIU_RQST_FIFO_WRITE 	0
+#define APIU_RQST_FIFO_READ 	1
+
+enum EXT_BUS_CLK_DIV{
+	EXT_BUS_CLK_DIV2	=0x0,
+	EXT_BUS_CLK_DIV4	=0x1,
+	EXT_BUS_CLK_DIV8 	=0x2,
+	EXT_BUS_CLK_DIV16	=0x3,
+	EXT_BUS_CLK_DIV32	=0x4,
+	EXT_BUS_CLK_DIV64	=0x5,
+	EXT_BUS_CLK_DIV3	=0x8,
+	EXT_BUS_CLK_DIV6	=0x9,
+	EXT_BUS_CLK_DIV12 	=0xA,
+	EXT_BUS_CLK_DIV24	=0xB,
+	EXT_BUS_CLK_DIV48	=0xC,
+	EXT_BUS_CLK_DIV1	=0xF
+};
+
+enum APB_BUS_CLK_DIV{
+	APB_BUS_CLK_DIV4	=0x0,
+	APB_BUS_CLK_DIV8	=0x1,
+	APB_BUS_CLK_DIV16	=0x2,
+	APB_BUS_CLK_DIV32	=0x3,
+	APB_BUS_CLK_DIV64	=0x4
+};
+
+enum L2_SUB_CLK_DIV{
+	L2_BUS_CLK_DIV2		=0x0,
+	L2_BUS_CLK_DIV4		=0x1,
+	L2_BUS_CLK_DIV8 	=0x2,
+	L2_BUS_CLK_DIV16	=0x3,
+	L2_BUS_CLK_DIV32	=0x4,
+	L2_BUS_CLK_DIV64	=0x5,
+	L2_BUS_CLK_DIV3		=0x8,
+	L2_BUS_CLK_DIV6		=0x9,
+	L2_BUS_CLK_DIV12 	=0xA,
+	L2_BUS_CLK_DIV24	=0xB,
+	L2_BUS_CLK_DIV48	=0xC,
+	L2_BUS_CLK_DIV1		=0xF
+};
+
+#define APB_CLK_SHIFT		0
+#define L2S_CLK_SHIFT		4
+#define EXT1_CLK_SHIFT		16
+#define EXT2_CLK_SHIFT		20
+#define EXT3_CLK_SHIFT		24
+
+#define	APIU_CCCR1		0xF0000000
+#define	APIU_CCCR2		0xF0000004
+#define	APIU_CCCR3		0xF0000008
+#define	APIU_CCCR4		0xF000000C
+#define	APIU_ICCR		0xF0000010
+#define	APIU_IOCR		0xF0000014
+#define	APIU_ISLR1		0xF0000020
+#define	APIU_ISLR2		0xF0000024
+#define	APIU_ISLR3		0xF0000028
+#define	APIU_ISLR4		0xF000002C
+
+#define APIU_UNIT_BURST_ADDR	0xFF0
+#define APIU_UNIT_USFR			0xFF8
+#define APIU_UNIT_UCR			0xFFC
+#define RW_MASK					(~0x3ul)
+
+
+enum APIU_DEV{
+	APIU_GPIO1		=0xF0008000,
+	APIU_GPIO2		=0xF0009000,
+	APIU_GPIO3		=0xF000A000,
+	APIU_GPIO4		=0xF000B000,
+	APIU_GPIO5		=0xF000C000,
+	APIU_GPIO6		=0xF000D000,
+	APIU_GPIO7		=0xF000E000,
+	APIU_GPIO8		=0xF000F000,
+	
+	APIU_UART0		=0xF0010000,
+	APIU_UART1		=0xF0011000,
+	APIU_UART2		=0xF0012000,
+	APIU_UART3		=0xF0013000,
+	
+	APIU_I2S1		=0xF0014000,
+#define APIU_I2S1_TXL     	(APIU_I2S1 | 0x10)
+#define APIU_I2S1_TXR     	(APIU_I2S1 | 0x14)
+#define APIU_I2S1_RXL     	(APIU_I2S1 | 0x20)
+#define APIU_I2S1_RXR     	(APIU_I2S1 | 0x24)
+	APIU_I2S2		=0xF0015000,
+#define APIU_I2S2_TXL     	(APIU_I2S2 | 0x10)
+#define APIU_I2S2_TXR     	(APIU_I2S2 | 0x14)
+#define APIU_I2S2_RXL     	(APIU_I2S2 | 0x20)
+#define APIU_I2S2_RXR     	(APIU_I2S2 | 0x24)
+
+	APIU_GPTIMER1		=0xF0016000,
+	APIU_GPTIMER2		=0xF0016100,
+	APIU_GPTIMER3		=0xF0016200,
+	APIU_GPTIMER4		=0xF0016300,
+	APIU_WDTIMER		=0xF0017000,
+	
+	APIU_SPI1		=0xF0018000,
+	APIU_SPI2		=0xF0019000,
+	APIU_SPI3		=0xF001A000,
+	APIU_SPI4		=0xF001B000,
+	
+	APIU_I2C1		=0xF001C000,
+	APIU_I2C2		=0xF001D000,
+	APIU_I2C3		=0xF001E000,
+	APIU_I2C4		=0xF001F000,
+};
+
+enum APIU_UART{
+	APIU_UART_ENABLE	= (0x1<<0),
+	APIU_UART_BQ_DIS	= (0x1<<1),
+	APIU_UART_IRQ_EN	= (0x1<<16),
+};
+
+enum UART{
+	UART0			= 0,
+	UART1			= 1,
+	UART2			= 2,
+	UART3			= 3,
+};
+
+enum  APIU_GPIO{
+	GPIO_DIR		= 0x400,
+	GPIO_DATA		= 0x000,
+};
+
+enum  GPT_APIU_GPIO1{
+	APIU_GPIO1_DIR		= APIU_GPIO1 | GPIO_DIR,     /*0xF0008400*/
+	APIU_GPIO1_DATA		= APIU_GPIO1 | GPIO_DATA,    /*0xF0008000*/
+};
+
+enum  GPT_APIU_GPIO4{
+	APIU_GPIO4_DIR		= APIU_GPIO4 | GPIO_DIR,     /*0xF000B400*/
+	APIU_GPIO4_DATA		= APIU_GPIO4 | GPIO_DATA,    /*0xF000B000*/
+};
+
+void gpt_apiu_uart_config(enum APIU_DEV dev, uint32_t param);
+void gpt_apiu_init(void);
+void gpt_apiu_enable(uint32_t dev_en);
+void gpt_apiu_uart_init(uint32_t uart_en, uint32_t div);
+uint32_t gpt_apiu_readl(void *dev,void* reg);
+uint16_t gpt_apiu_readw(enum APIU_DEV dev,void* reg);
+uint8_t gpt_apiu_readb(enum APIU_DEV dev,void* reg);
+void gpt_apiu_writel(void *dev, void* reg, uint32_t val);
+void gpt_apiu_writew(enum APIU_DEV dev, void* reg, uint16_t val);
+void gpt_apiu_writeb(enum APIU_DEV dev, void* reg, uint8_t val);
+
+#endif

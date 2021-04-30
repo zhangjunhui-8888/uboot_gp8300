@@ -1,0 +1,4 @@
+config GPT_SPI_NORFLASH
+	bool "Enable SPI norflash drivers"
+	help
+	  Enable norflash device drivers

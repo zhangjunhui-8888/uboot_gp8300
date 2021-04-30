@@ -1,0 +1,27 @@
+menu "fat file systems"
+
+config	FS_FAT 
+	bool "Enable fat file systems support"
+	default y
+	help
+	  Support fat file systems
+
+config	CMD_FAT 
+	bool "fat command support"
+	default y
+	help
+	  Support fat command 
+
+config	FAT_WRITE 
+	bool "fat write support"
+	default y
+	help
+	  Support fat write 
+
+config	CMD_FAT_WRITE 
+	bool "fat write command support"
+	default y
+	help
+	  Support fat write command 
+
+endmenu

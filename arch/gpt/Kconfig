@@ -1,0 +1,205 @@
+menu "GPT architecture"
+	depends on GPT
+
+config SYS_ARCH
+	default "gpt"
+
+config 64BIT
+	bool
+
+config GPT_CHIP1
+	bool
+	select 64BIT
+config GPT_CHIP2
+	bool
+	select 64BIT
+
+config SYS_CPU
+	default "chip1" if GPT_CHIP1
+	default "chip2" if GPT_CHIP2
+
+menu "GPT clock settings"
+
+source "arch/gpt/mach-chip2/Kconfig"
+
+endmenu
+
+config SYS_OUT_OF_ORDER_OFF
+        bool "Do not enable CPU out of order"
+        default n
+
+config SYS_ICACHE_OFF
+        bool "Do not use Instruction Cache"
+        default n
+
+config SYS_DCACHE_OFF
+        bool "Do not use Data Cache"
+        default y
+
+config SYS_L2CACHE_OFF
+        bool "Do not use L2 Cache"
+        default y
+
+config GPT_CACHE_LINE_SHIFT
+        int
+        range 5 7
+        default "5" if GPT_CHIP1 || GPT_CHIP2
+        help
+          This option specifies "N", with Line-len = 2 power N
+          So line lengths of 32, 64, 128 are specified by 5,6,7, respectively
+          Linux only supports same line lengths for I and D caches.
+
+config GPT_SMP_SUPPORT
+	bool "GPT SMP boot up support"
+	default n
+
+choice
+	prompt "Target select"
+	optional
+
+config TARGET_CHIP1_FPGA
+	bool "Support chip1 fpga board"
+	select GPT_CHIP1
+config TARGET_CHIP1_EVK
+	bool "Support gpt chip1 board"
+	select GPT_CHIP1
+config TARGET_CHIP2_FPGA
+	bool "Support chip2 fpga board"
+	select GPT_CHIP2
+	select SUPPORT_SPL
+config TARGET_CHIP2_EVK
+	bool "Support chip2 evk board"
+	select GPT_CHIP2
+config TARGET_CHIP2_SIM
+	bool "Support chip2 simulation"
+	select GPT_CHIP2
+config TARGET_CHASE_XILINX
+	bool "Support chase xilinx board"
+	select GPT_CHIP2
+config TARGET_GP8300_FPGA
+	bool "Support gp8300 fpga board"
+	select GPT_CHIP2
+	select SUPPORT_SPL
+config TARGET_GP8300_EVK
+	bool "Support gp8300 evk board"
+	select GPT_CHIP2
+	select SUPPORT_SPL
+config TARGET_GP8300_DVB
+	bool "Support gp8300 dvb board"
+	select GPT_CHIP2
+	select SUPPORT_SPL
+config TARGET_GP8300_CHAOKONG
+	bool "Support gp8300 chaokong board"
+	select GPT_CHIP2
+	select SUPPORT_SPL
+config TARGET_GP8300_TCX
+	bool "Support tcx haps board"
+	select GPT_CHIP2
+config TARGET_GP8300_HERA
+	bool "Support hera board"
+	select GPT_CHIP2
+
+endchoice
+
+source "arch/gpt/cpu/chip1/Kconfig"
+source "arch/gpt/cpu/chip2/Kconfig"
+
+source "board/gpt/chip1fpga/Kconfig"
+source "board/gpt/chip1evk/Kconfig"
+source "board/gpt/chip2fpga/Kconfig"
+source "board/gpt/chip2evk/Kconfig"
+source "board/gpt/chip2sim/Kconfig"
+source "board/gpt/chasexilinx/Kconfig"
+source "board/gpt/gp8300_fpga/Kconfig"
+source "board/gpt/gp8300_evk/Kconfig"
+source "board/gpt/gp8300_dvb/Kconfig"
+source "board/gpt/gp8300_chaokong/Kconfig"
+source "board/gpt/gp8300_tcx/Kconfig"
+source "board/gpt/gp8300_hera/Kconfig"
+
+menu "OS boot interface"
+
+config GPT_BOOT_CMDLINE_LEGACY
+	bool "Hand over legacy command line to Linux kernel"
+	default y
+	help
+	  Enable this option if you want U-Boot to hand over the Yamon-style
+	  command line to the kernel. All bootargs will be prepared as argc/argv
+	  compatible list.
+
+config GPT_BOOT_ENV_LEGACY
+	bool "Hand over legacy environment to Linux kernel"
+	default y
+	help
+	  Enable this option if you want U-Boot to hand over the Yamon-style
+	  environment to the kernel. Information like memory size, initrd
+	  address and size will be prepared as zero-terminated key/value list.
+
+config GPT_BOOT_FDT
+	bool "Hand over a flattened device tree to Linux kernel"
+	default n
+	help
+	  Enable this option if you want U-Boot to hand over a flattened
+	  device tree to the kernel. 
+
+endmenu
+
+config GPT_TCMBOOT
+	bool "Boot from TCM"
+	default n 
+	help
+	  Enable this option if you want boot from TCM.
+	  The boot address is TCM address
+
+
+config USE_ARCH_STRCPY
+	bool "Use asm optimized strcpy"
+	default y
+	help
+	  Enable this option if you want use the asm optimized strcpy.
+
+config USE_ARCH_STRLEN
+	bool "Use asm optimized strlen"
+	default y
+	help
+	  Enable this option if you want use the asm optimized strlen.
+
+config USE_ARCH_STRCMP
+	bool "Use asm optimized strcmp"
+	default y
+	help
+	  Enable this option if you want use the asm optimized strcmp.
+
+config USE_ARCH_MEMSET
+	bool "Use asm optimized memset"
+	default n
+	help
+	  Enable this option if you want use the asm optimized memset.
+
+config USE_ARCH_MEMCPY
+	bool "Use asm optimized memcpy"
+	default n
+	help
+	  Enable this option if you want use the asm optimized memcpy.
+
+config USE_ARCH_MEMCMP
+	bool "Use asm optimized memcmp"
+	default n
+	help
+	  Enable this option if you want use the asm optimized memcmp.
+
+menu "WatchDog"
+config HW_WATCHDOG
+	bool "Enable Hardware Watchdog"
+	help
+		Enable Hardware Watchdog.
+
+config GPT_WATCHDOG
+	bool "Use gpt watchdog"
+	default y
+	select HW_WATCHDOG
+	help
+		Enable this option if you want use the gpt apiu watchdog.
+endmenu
+
+endmenu

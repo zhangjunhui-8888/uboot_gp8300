@@ -1,0 +1,6 @@
+SOC BOARD
+M:	gke <gke@hxgpt.com>
+S:	Maintained
+F:	board/gpt/gp8300_dvb/
+F:	include/configs/gp8300_dvb.h
+F:	configs/gpt_gp8300_dvb_defconfig

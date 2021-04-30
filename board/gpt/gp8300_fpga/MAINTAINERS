@@ -1,0 +1,6 @@
+FPGA BOARD
+M:	jjren <jjren@hxgpt.com>
+S:	Maintained
+F:	board/gpt/gp8300_fpga/
+F:	include/configs/gp8300_fpga.h
+F:	configs/gpt_gp8300_fpga_defconfig

@@ -1,0 +1,6 @@
+HAPS BOARD
+M:	gang.ke <gke@hxgpt.com>
+S:	Maintained
+F:	board/gpt/gp8300_tcx/
+F:	include/configs/gp8300_tcx.h
+F:	configs/gpt_gp8300_tcx_defconfig

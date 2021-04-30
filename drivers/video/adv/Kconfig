@@ -1,0 +1,10 @@
+#
+# hdmi configuration
+#
+
+menu "hdmi support"
+
+config HDMI_ADV
+	bool "Enable ADV driver support"
+	default n
+endmenu

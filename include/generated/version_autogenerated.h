@@ -1,0 +1,4 @@
+#define PLAIN_VERSION "2016.01-00041-gd7c0f1d"
+#define U_BOOT_VERSION "U-Boot " PLAIN_VERSION
+#define CC_VERSION_STRING "gpt-gcc (GPTX-CHIP2-GLIBC-2020-07-22) 9.0.0 20181226 (experimental)"
+#define LD_VERSION_STRING "GNU ld (GNU Binutils) 2.27"

@@ -1,0 +1,6 @@
+SOC BOARD
+M:	gke <gke@hxgpt.com>
+S:	Maintained
+F:	board/gpt/gp8300_chaokong/
+F:	include/configs/gp8300_chaokong.h
+F:	configs/gpt_gp8300_chaokong_defconfig
